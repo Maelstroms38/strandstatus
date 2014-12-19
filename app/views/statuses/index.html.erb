@@ -5,7 +5,7 @@
 <%= link_to "Write a new Strand", new_status_path, class: "btn btn-primary" %>
 <% @statuses.each do |status| %>
 <div class="status">
-  <strong><% status.name %></strong>
+  <strong><%= status.user_id %></strong>
   <p><%= status.content %></p>
   <div class="meta">
     <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
