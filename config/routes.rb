@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   end
 
   resources :statuses
-  get 'strands', to: 'statuses#index', as: :strands
+  get "strands", :to => "statuses#index", :as => :strands
   root to: 'statuses#index'
+
+  get '/:id', to: "profiles#show", as: 'profile'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
