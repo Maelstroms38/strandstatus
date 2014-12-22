@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   
   devise_scope :user do
-    get 'signup', to: 'devise/registrations#new', as: :signup
-    get 'signin', to: 'devise/sessions#new', as: :signin
-    get 'signout', to: 'devise/sessions#destroy', as: :signout
+    get '/signup', to: 'devise/registrations#new', as: :signup
+    get '/signin', to: 'devise/sessions#new', as: :signin
+    get '/signout', to: 'devise/sessions#destroy', as: :signout
   end
 
   resources :statuses

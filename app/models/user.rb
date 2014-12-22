@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   has_many :statuses
   def full_name
-  	first_name + " " + last_name
+  	first_name + ' '  + last_name
   end
 
 def gravatar_url
@@ -24,4 +24,7 @@ def gravatar_url
 
   "http://gravatar.com/avatar/#{hash}"
 end
+def to_param
+    profile_name
+  end
 end
