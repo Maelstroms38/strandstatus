@@ -3,3 +3,9 @@ first_name: "Michael"
 last_name: "Stromer"
 email: "stroms38@gmail.com"
 profile_name: "Maestro"
+
+max:
+first_name: "max"
+last_name: "Segall"
+email: "maxwellsegall@gmail.com"
+profile_name: "MByron"

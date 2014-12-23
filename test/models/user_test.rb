@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+should have_many(:user_friendships)
+should have_many(:friends)
+
   test "user should enter first name" do
   	user = User.new
   	assert !user.save
@@ -21,5 +24,4 @@ end
   user.profile_name = users(:michael).profile_name
   assert !user.save
   assert !user.errors[:profile_name].empty?
-end
 end
