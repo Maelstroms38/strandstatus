@@ -43,8 +43,8 @@ class StatusesController < ApplicationController
   # PATCH/PUT /statuses/1.json
   def update
     @status = current_user.statuses.find(params[:id])
-    if (params[:status])
-      params[:status].delete(:user_id) if params[:status].has_key?(:user_id)
+    if (params[:status]) && params[:status].has_key?(:user_id)
+      params[:status].delete(:user_id) 
     end
     
     respond_to do |format|
