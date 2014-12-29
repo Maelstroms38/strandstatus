@@ -1,0 +1,14 @@
+<%= page_header do %>
+<h1>Activities</h1>
+<% end %>
+<% @activities.each do |activity| %>
+	<div class="status media">
+		<%= avatar_profile_link activity.user, {}, class: 'pull-left' %>
+		<div class="media-body">
+			<h4 class="media-heading"><%= activity.user.profile_name %></h4>
+			<%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}", locals: { activity: activity } %>
+		<small><%= activity.created_at %></small>
+		</div>
+	</div>
+<% end %>
+<%= will_paginate @activities %>

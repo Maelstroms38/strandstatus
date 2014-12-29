@@ -7,6 +7,13 @@ gem 'rails', '4.1.8'
 
 gem 'devise'
 gem 'simple_form'
+gem 'state_machine', :git => 'https://github.com/seuros/state_machine.git'
+gem 'draper', '~> 1.0'
+gem 'js-routes'
+gem 'paperclip', "~> 3.0"
+gem 'twitter-bootstrap-rails'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'sqlite3'

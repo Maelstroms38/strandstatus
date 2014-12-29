@@ -8,4 +8,7 @@ class ProfilesController < ApplicationController
   	render file: 'public/404', status: 404, formats: [:html]
   end
 end
+def profiles_params
+      params.require(user).permit(:user_id, :friend_id, :users, :friend, :state, :first_name, :last_name, :user_friendship, :full_name, :album, :albums_thumbnail, :title)
+  end
 end

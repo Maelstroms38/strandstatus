@@ -1,25 +1,30 @@
+<br />
 <div class ="row">
   <div class="span4">  
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "well"}) do |f| %>
+  <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "well form-vertical well-small"}) do |f| %>
 
-  <fieldset>
-    <legend>Sign In</legend>
-    <%= f.input :email %>
-    <%= f.input :password %>
+    <fieldset>
+      <legend>Sign In</legend>
+      <%= f.input :email %>
+      <%= f.input :password %>
 
-  <% if devise_mapping.rememberable? %>
-  <div><%= f.input :remember_me, as: :boolean %></div>
+      <% if devise_mapping.rememberable? -%>
+        <%= f.input :remember_me, as: :boolean, inline_label: "Remember Me", label: false %>
+      <% end -%>
+
+      <%= f.button :submit, "Sign In", class: 'btn btn-primary btn-block' %>
+    </fieldset>
   <% end %>
-  <div><%= f.button :submit, "Sign in" %></div>
 
-  </fieldset>
-  <% end %>
+  </div>
 
-  <%= render "devise/shared/links" %>
-</div>
-<div class="span8">
-  <h2>Strands are unique prompts.</h2>
-  <h2>Get inspired to write today!</h2>
-</div>
+  <div class="span8">
+    <h2>Welcome back to Strands!</h2>
+    <p>
+      <%= image_tag "http://www.holstgroup.co.uk/wp-content/uploads/very-bright-idea.jpg", class: 'pull-right' %> 
+      New here? <%= render "devise/shared/links" %>
+    </p>
+    
+  </div>
 </div>
